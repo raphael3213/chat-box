@@ -5,6 +5,6 @@
 (function(){
   console.log('hello world :o');
   
-var socket=io.connect(process.env.PORT);
+var socket=io();
   
 })()
