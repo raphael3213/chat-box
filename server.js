@@ -19,10 +19,10 @@ app.get("/", function (request, response) {
 var server = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + server.address().port);
 });
-
+console.log("hello")
 var io=socket(server);
 
-io.on('connecting',function(socket){
+io.on('connection',function(socket){
 
 console.log(socket.id)
 
