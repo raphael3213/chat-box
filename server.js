@@ -15,7 +15,15 @@ app.get("/", function (request, response) {
 });
 
 
-var listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+
+var server = app.listen(process.env.PORT, function () {
+  console.log('Your app is listening on port ' + server.address().port);
 });
 
+var io=socket(server);
+
+io.on('connecting',function(socket){
+
+console.log(socket.id)
+
+})
