@@ -14,6 +14,8 @@ var socket=io('https://skitter-place.glitch.me/');
     var ran=Math.round(Math.random()*1000000);
   var data1="Anonymus"+ran.toString()+"chas joined conversation";
   var namel="Anonymus"+ran.toString();
+ var feedback = document.getElementById('feedback');
+  var rat=0;
   if(socket){
   
     console.log(data1);
@@ -35,6 +37,12 @@ var socket=io('https://skitter-place.glitch.me/');
     socket.emit('typing',da);
   
   });
+  
+  socket.on('typer',function(data){
+  
+  output.innerHTML="<p><em>"+data+"</em></p>";
+  rat=-1;
+  })
   
   
 })()
