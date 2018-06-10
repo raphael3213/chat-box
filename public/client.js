@@ -10,18 +10,23 @@ var socket=io('https://skitter-place.glitch.me/');
   var name=document.getElementById('namer');
   var message=document.getElementById('message');
   var sndbut=document.getElementById('send');
-  
-  if(socket){
+  var  output = document.getElementById('output');
     var ran=Math.round(Math.random()*1000000);
-  var data="Anonymus"+ran.toString()+"has joined conversation";
-    console.log(data);
-  socket.emit('enter',data);
+  var data1="Anonymus"+ran.toString()+"chas joined conversation";
+  var namel="Anonymus"+ran.toString();
+  if(socket){
+  
+    console.log(data1);
+  socket.emit('enter',data1);
   }
   
   socket.on('chat1',function(data){
   console.log("hello mudda");
-  message.innerHTML+="<p>"+data+"</p>";
+  output.innerHTML+="<p><em>"+data+"</em></p>";
   })
+  
+  
+  message.addEventListener('keypress',function);
   
   
 })()

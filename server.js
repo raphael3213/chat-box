@@ -25,7 +25,7 @@ var io=socket(server);
 io.on('connection',function(socket){
 
   socket.on('enter',function(data){
-  
+  console.log("in server")
   socket.broadcast.emit('chat1',data);
   
   })
