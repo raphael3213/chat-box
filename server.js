@@ -24,6 +24,7 @@ var io=socket(server);
 
 io.on('connection',function(socket){
 
+  io.sockets.
 console.log(socket.id)
 
 })
