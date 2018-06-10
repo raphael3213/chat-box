@@ -35,7 +35,11 @@ io.on('connection',function(socket){
   socket.broadcast.emit('typer',data);
   });
   
-  socket.on('')
+  socket.on('message',function(data){
+  
+  io.sockets.emit('messager',data);
+  
+  })
 console.log(socket.id)
 
 })

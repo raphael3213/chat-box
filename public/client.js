@@ -52,8 +52,16 @@ var socket=io('https://skitter-place.glitch.me/');
     name:handle,
     mess:message.value
     }
-  
+  message.value="";
   socket.emit('message',datar);
+  
+  })
+  
+  socket.on('messager',function(data){
+  
+   feedback.innerHTML = '';
+    output.innerHTML += '<p><strong>' + data.name + ': </strong>' + data.mess + '</p>';
+  
   
   })
   
