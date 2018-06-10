@@ -26,7 +26,15 @@ var socket=io('https://skitter-place.glitch.me/');
   })
   
   
-  message.addEventListener('keypress',function);
+  message.addEventListener('keypress',function()
+                           {
+    var handle=namel;
+  if(name){handle=name;}
+  
+    var da=handle+"is typing a message";
+    socket.emit('typing',da);
+  
+  });
   
   
 })()

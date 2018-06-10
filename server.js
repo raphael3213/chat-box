@@ -25,10 +25,13 @@ var io=socket(server);
 io.on('connection',function(socket){
 
   socket.on('enter',function(data){
-  console.log("in server")
+  console.log("in serber")
   socket.broadcast.emit('chat1',data);
   
   })
+  
+  socket.on('typing',function(data){
+  });
 console.log(socket.id)
 
 })
