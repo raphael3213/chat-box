@@ -24,25 +24,37 @@ var socket=io('https://skitter-place.glitch.me/');
   
   socket.on('chat1',function(data){
   console.log("hello mudda");
-  output.innerHTML+="<p><em>"+data+"</em></p>";
+  feedback.innerHTML+="<p><em>"+data+"</em></p>";
   })
   
   
   message.addEventListener('keypress',function()
                            {
     var handle=namel;
-  if(name){handle=name;}
+  if(name.value!=""){handle=name.value;}
   
-    var da=handle+"is typing a message";
+    var da=handle+" is typing a message";
     socket.emit('typing',da);
   
   });
   
   socket.on('typer',function(data){
   
-  output.innerHTML="<p><em>"+data+"</em></p>";
+  feedback.innerHTML="<p><em>"+data+"</em></p>";
   rat=-1;
   })
+  sndbut.addEventListener('click',function(){
+    
+    var handle=namel;
+  if(name.value!=""){handle=name.value;}
+    
+  var datar={
+    name:handle,
+    mess:message.value
+    }
   
+  socket.emit('message',datar);
+  
+  })
   
 })()

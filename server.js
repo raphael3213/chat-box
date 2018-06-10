@@ -34,6 +34,8 @@ io.on('connection',function(socket){
   
   socket.broadcast.emit('typer',data);
   });
+  
+  socket.on('')
 console.log(socket.id)
 
 })
