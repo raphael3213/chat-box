@@ -24,7 +24,11 @@ var io=socket(server);
 
 io.on('connection',function(socket){
 
-  io.sockets.
+  socket.on('enter',function(data){
+  
+  socket.broadcast.emit('chat1',data);
+  
+  })
 console.log(socket.id)
 
 })
